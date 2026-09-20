@@ -2,7 +2,7 @@
 
 **Create predictions. Build a league. Compete with friends.**
 
-I built Callit as a personal project to let friends create prediction leagues and compete using play-money coins. Players can make their own predictions, bet on outcomes, and see how the odds change as others join in. Winning payouts come from the coins in the betting pool.
+Callit is a play-money prediction market I built as a personal project, where friends can create leagues and compete by predicting real-world outcomes. Players can make their own predictions, bet on outcomes, and see how the odds change as others join in. Winning payouts come from the coins in the betting pool.
 
 [Open Callit](https://prediction-leagues.sah1l0.chatgpt.site) · [Pricing and settlement](docs/PRICING.md) · [Development notes](docs/DEVELOPMENT.md)
 
