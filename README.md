@@ -8,7 +8,7 @@ Callit is a play-money prediction market I built as a personal project, where fr
 
 ## How I built it
 
-**I started this project on August 10, 2026.** The code here includes improvements made since then.
+I started this project on August 10, 2026 and the code here includes improvements made since then.
 
 The idea for Callit was mine, and I mainly worked on the backend and pricing algorithm. I used ChatGPT to help polish the frontend and add sign-in, connect signed-in users to their player accounts, and let friends play together through shared leagues and invitations.
 
