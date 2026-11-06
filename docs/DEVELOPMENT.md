@@ -22,6 +22,10 @@ The game is stored as a JSON document in a single D1 row. Mutations use a revisi
 
 The export preserves the application from source commit `1c90ec9`, with professional documentation, focused tests, package naming, removal of the original deployment identifier, and removal of a one-time owner-specific coin grant and its private player identifier. These export changes do not modify the running Site.
 
+## UI update — November 5, 2026
+
+The latest Callit update changes only the interface styling and public-facing copy in `app/globals.css` and `app/callit.tsx`. Game logic, API routes, data storage, button behavior, and interactions were not changed. The site was reviewed at desktop, tablet, and phone sizes, and the type check and production build passed.
+
 ## Verification scope
 
-The export's pricing and settlement tests were run locally. A fresh dependency installation, full application build, and end-to-end authentication test were not performed for this publication. The complete pinned dependency lockfile is included for reproducible installation.
+For the initial GitHub export, pricing and settlement tests were run locally. A fresh dependency installation, full application build, and end-to-end authentication test were not performed at that time. The complete pinned dependency lockfile is included for reproducible installation.
