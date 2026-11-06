@@ -60,16 +60,125 @@ input,textarea{background:#101215;border-color:#3a3e45;border-radius:8px;min-hei
 @media(pointer:coarse){[data-slot=dialog-close]{min-width:44px;min-height:44px;top:8px;right:8px}.outcome,.btn{min-height:44px}}
 .list-table td:first-child{white-space:normal;max-width:340px}.list-table td:first-child button{white-space:normal;overflow-wrap:anywhere;line-height:1.55}.list-table td:first-child .muted{white-space:normal}
 
-/* Blue brand accents over cool charcoal surfaces. */
-:root{--background:#0c1017;--foreground:#f2f5fa;--card:#161d28;--card-foreground:#f2f5fa;--popover:#1c2533;--popover-foreground:#f2f5fa;--primary:#7daaff;--primary-foreground:#0a1730;--secondary:#232e3e;--secondary-foreground:#e7edf7;--muted:#1c2533;--muted-foreground:#a1aec1;--accent:#23354f;--accent-foreground:#a2c3ff;--border:#2c3646;--input:#414f65;--ring:#7daaff;--chart-1:#7daaff;--sidebar-primary:#7daaff;--sidebar-ring:#7daaff}
-body{background-color:#0c1017;background-image:radial-gradient(ellipse 90% 600px at 50% -150px,#20365640,transparent);background-repeat:no-repeat}
-.topbar{background:#101620;border-color:#283242}.blue{color:#8fb7ff}.brand img{border-radius:9px}
-.btn.primary{background:#3868b9;border-color:#547ec3;color:#fff}.btn.primary:hover{background:#457bd0;border-color:#7199db}.btn.quiet{color:#cad5e6}.btn.quiet:hover{background:#202d41;border-color:#465b78}
-.account-balance{background:#182235;border-color:#30415b}.avatar{background:#253d61;border-color:#3b567e;color:#d8e7ff}
-.stat{background:#151d29}.stat-label,.intro p{color:#a1aec1}.stat small{color:#909fb5}.market-card,.league-card{background:#171f2c;border-color:#2d394c}.market-card:hover{background:#1a2637;border-color:#49658b}.market-title:hover{color:#b5d0ff}
-.panel{background:#141c28;border-color:#2b3749}.panel p,.panel .notice{color:#9eacc1}.panel .rule{color:#a3b1c6}.rule svg{color:#8ea7ce}.join-panel,.onboarding{background:#18273d;border-color:#344d70}.join-panel .btn{background:#233b5c;border-color:#45648e;color:#d7e7ff}.join-panel .btn:hover{background:#2e4c72}.onboarding p{color:#b2c0d6}.eyebrow{color:#94b6eb}.onboarding .notice{color:#a3b5d0}
-.outcome{background:#1c3455;border-color:#355981;color:#b7d3ff}.outcome:hover{background:#25486e;border-color:#527eae}.outcome.no{background:#2a222a;border-color:#513943;color:#dfa1a5}.outcome.no:hover{background:#392b33;border-color:#78515c}.empty-zone{background:#131c29;border-color:#2b3a50}.empty-icon{background:#20334e;border-color:#385779;color:#9bbdf2}.badge{background:#202c3e;border-color:#3a4960;color:#b1c1d9}
-input,textarea{background:#101925;border-color:#3c4c65}input:hover,textarea:hover{border-color:#607594}input::placeholder,textarea::placeholder{color:#8393ab}input:focus,textarea:focus{border-color:#7daaff}
-[data-slot=select-trigger]{background:#1c283b;border-color:#3b4d68}[data-slot=select-content]{background:#1b283b;border-color:#425877}[data-slot=select-item]:focus{background:#2c4260}
-[data-slot=dialog-content],[data-slot=alert-dialog-content]{background:#171f2c;border-color:#41516a}[data-slot=dialog-description],[data-slot=alert-dialog-description],.modal p{color:#a6b5cb}.modal [data-slot=tabs-list]{background:#101927;border-color:#344761}.modal [data-slot=tabs-trigger][data-state=active]{background:#29476d;color:#c4dbff}.trade-total,.detail-chart{background:#101a28;border-color:#30435e}.trade-total strong{color:#b7d3ff}
-.list-table{background:#151e2c;border-color:#2d3a50}.list-table th{background:#1d2b40;color:#a9bdd9}.list-table tbody tr:hover{background:#1d2f48}.list-table button:hover{color:#b5d0ff}.footer{color:#899bb5;border-color:#2b374a}.footer a:hover{color:#b5d0ff}::selection{background:#355c93;color:#fff}
+/* Callit: quiet, information-first dark interface. */
+:root {
+  color-scheme: dark;
+  --background: #0e1012;
+  --foreground: #eef0f2;
+  --card: #171a1d;
+  --card-foreground: #eef0f2;
+  --popover: #1c2024;
+  --popover-foreground: #eef0f2;
+  --primary: #88aef0;
+  --primary-foreground: #0d1420;
+  --secondary: #22262b;
+  --secondary-foreground: #e6e9ec;
+  --muted: #1e2226;
+  --muted-foreground: #a1a8b0;
+  --accent: #253042;
+  --accent-foreground: #b8cff4;
+  --border: #2a2f34;
+  --input: #434a52;
+  --ring: #88aef0;
+  --chart-1: #88aef0;
+  --sidebar-primary: #88aef0;
+  --sidebar-ring: #88aef0;
+}
+body { background: var(--background); background-image: none; }
+::selection { background: #35527d; color: #fff; }
+.topbar { height: 70px; background: #111315; border-bottom-color: #272b2f; }
+.brand { font-size: 25px; letter-spacing: -.9px; }
+.brand small { color: #858e98; }
+.account-balance { background: transparent; border-color: #343940; box-shadow: none; }
+.avatar { background: #2a3037; border-color: #3e454d; color: #e3e7ec; }
+.page { max-width: 1340px; padding-top: 48px; }
+.intro { margin-bottom: 36px; }
+.intro p { color: #a3aab2; }
+h1 { font-size: clamp(29px, 3vw, 39px); font-weight: 600; letter-spacing: -1.45px; }
+h2 { font-weight: 600; }
+h3 { font-weight: 600; }
+.blue { color: #9cbcf0; }
+.btn { background: #25292e; border-color: #353b42; box-shadow: none; }
+.btn:hover { background: #30363d; border-color: #4b545e; }
+.btn.primary { background: #5279b5; border-color: #5279b5; color: #fff; }
+.btn.primary:hover { background: #6289c4; border-color: #6289c4; box-shadow: none; }
+.btn.quiet { color: #d0d6dd; background: transparent; }
+.btn.quiet:hover { background: #22262b; border-color: #444b53; }
+.stats { box-shadow: none; background: var(--border); border-radius: 9px; margin-bottom: 36px; }
+.stat { background: #171a1d; padding: 22px 24px; }
+.stat-label { color: #a2a9b1; }
+.stat-value { font-weight: 600; }
+.stat small { color: #87919c; }
+.workspace { gap: 30px; }
+.board-head { margin-bottom: 20px; }
+.board-head [data-slot=tabs-list] { border-color: #30353a; }
+.board-head [data-slot=tabs-trigger] { color: #9ba3ad; }
+.board-head [data-slot=tabs-trigger][data-state=active] { color: #d9e6fc; }
+.board-head [data-slot=tabs-trigger]:after { background: #88aef0; }
+.market-grid, .league-grid { gap: 12px; }
+.market-card, .league-card { background: #171a1d; border-color: #2d3237; border-radius: 9px; box-shadow: none; }
+.market-card { padding: 19px 20px; min-height: 218px; }
+.market-card:hover, .league-card:hover { background: #1b1f23; border-color: #535e6b; box-shadow: none; }
+.card-top { margin-bottom: 13px; }
+.badge { background: transparent; border-color: #3a4149; color: #aeb7c1; }
+.market-title { font-size: 16px; line-height: 1.4; font-weight: 600; }
+.market-title:hover { color: #d9e6fc; }
+.card-price { margin: 18px 0 16px; }
+.probability { font-size: 32px; letter-spacing: -1.3px; }
+.probability span { color: #9ea8b4; }
+.spark { opacity: .83; }
+.outcome, .outcome.no { background: #22262b; border-color: #3b424a; color: #e1e6ec; border-radius: 6px; }
+.outcome:hover, .outcome.no:hover { background: #2b3440; border-color: #6686b2; filter: none; }
+.outcome.no:hover { background: #353039; border-color: #715660; }
+.card-foot { color: #909aa4; border-color: #2e3439; margin-top: 14px; padding-top: 12px; }
+.rail { gap: 12px; }
+.panel { background: #171a1d; border-color: #2d3237; border-radius: 9px; padding: 20px; }
+.panel p, .panel .notice, .panel .rule { color: #a4adb6; }
+.panel h3 { font-size: 14px; }
+.rule svg { color: #8c9db4; }
+.join-panel, .onboarding { background: #191d21; border-color: #343a41; }
+.join-panel .btn { background: #252b32; border-color: #45505e; color: #e0e9f4; }
+.join-panel .btn:hover { background: #303b48; }
+.onboarding { padding: 26px 28px; border-radius: 9px; margin-bottom: 32px; }
+.onboarding h2 { font-size: 23px; }
+.onboarding p { color: #aeb7c1; }
+.eyebrow { color: #a9b8cc; }
+.onboarding .notice { color: #8e98a3; }
+.empty-zone { min-height: 265px; background: #15181b; border: 1px solid #2d3237; border-radius: 9px; }
+.empty-icon { background: #222932; border-color: #3c4856; color: #a8bfdf; }
+.empty-zone [data-slot=empty-title] { font-size: 19px; }
+.league-card { padding: 21px; }
+.league-card h3 { margin-top: 13px; }
+.list-table { background: #171a1d; border-color: #2d3237; border-radius: 9px; }
+.list-table th { background: #1e2227; color: #abb4be; }
+.list-table tbody tr:hover { background: #20262c; }
+.list-table button:hover { color: #d9e6fc; }
+input, textarea { background: #121518; border-color: #424951; }
+input:hover, textarea:hover { border-color: #646d77; }
+input::placeholder, textarea::placeholder { color: #89939e; }
+input:focus, textarea:focus { border-color: #88aef0; }
+[data-slot=select-trigger] { background: #20252a; border-color: #444c55; }
+[data-slot=select-content] { background: #20252a; border-color: #48515b; }
+[data-slot=select-item]:focus { background: #303b47; }
+[data-slot=dialog-content], [data-slot=alert-dialog-content] { background: #1a1e22; border-color: #414950; box-shadow: 0 24px 70px #0008; }
+[data-slot=dialog-description], [data-slot=alert-dialog-description], .modal p { color: #aab3bd; }
+.modal [data-slot=tabs-list] { background: #121619; border-color: #3b454f; }
+.modal [data-slot=tabs-trigger][data-state=active] { background: #344963; color: #e3edfa; }
+.trade-total, .detail-chart { background: #14181c; border-color: #353d45; }
+.trade-total strong { color: #c6d7ef; }
+.footer { color: #919ba5; border-color: #30353a; }
+.footer a:hover { color: #d9e6fc; }
+@media (max-width: 800px) {
+  .market-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .workspace { gap: 24px; }
+}
+@media (max-width: 560px) {
+  .topbar { height: 66px; }
+  .page { padding-top: 28px; }
+  .intro { margin-bottom: 26px; }
+  .market-grid, .league-grid { grid-template-columns: 1fr; }
+  .market-card { min-height: 210px; }
+  .stat { padding: 18px 15px; }
+  .onboarding { padding: 23px; }
+  .empty-zone { min-height: 250px; }
+}
